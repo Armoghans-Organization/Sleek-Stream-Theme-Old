@@ -1,0 +1,5 @@
+[Custom]
+# Configuration for JavaScript (assets/js/custom.js)
+Js = false # Set to true to enable JavaScript functionality
+# Configuration for Cascading Style Sheets (assets/css/custom.css)
+Css = false # Set to true to enable Cascading Style Sheets functionality

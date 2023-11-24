@@ -1,9 +1,35 @@
+<!-- This code is responsible for including CSS files in a Hugo website. -->
+
+
+{{/* Set options for CSS processing, specifying target path and output style */}}
 {{ $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed") }}
+
+{{/* Get the main SCSS file, convert to CSS, minify, and fingerprint */}}
 {{ $style := resources.Get "scss/style.scss" | toCSS $options | minify | fingerprint }}
+
+{{/* Conditionally include the CSS based on the Hugo environment */}}
 {{- if eq hugo.Environment "development" }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{- else }}
-{{- with $style }}
-<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  {{/* In production, include minified and fingerprinted CSS with integrity check */}}
+  {{- with $style }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  {{- end }}
 {{- end }}
-{{- end }}
+
+{{/* Conditionally include custom CSS if defined in site parameters */}}
+{{ if .Site.Params.Custom.Css }}
+
+  {{/* Get the custom CSS file, conditionally include based on Hugo environment */}}
+  {{- with resources.Get "css/custom.css" }}
+    {{- if eq hugo.Environment "development" }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{- else }}
+      {{/* In production, include minified and fingerprinted custom CSS with integrity check */}}
+      {{- with . | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      {{- end }}
+    {{- end }}
+  {{- end }}
+
+{{ end }}

@@ -1,25 +1,47 @@
+<!-- This code is used in a Hugo template file to include JavaScript files in an HTML page. It includes
+three different JavaScript files: "js/main.js", "vendors/bootstrap.bundle.js", and "js/custom.js"
+(if defined in site parameters). -->
+
+{{/* Include main.js with conditional processing based on Hugo environment */}}
 {{- with resources.Get "js/main.js" }}
-{{- if eq hugo.Environment "development" }}
-{{- with . | js.Build }}
-<script src="{{ .RelPermalink }}"></script>
-{{- end }}
-{{- else }}
-{{- $opts := dict "minify" true }}
-{{- with . | js.Build $opts | fingerprint }}
-<script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
-{{- end }}
-{{- end }}
+  {{- if eq hugo.Environment "development" }}
+    {{- with . | js.Build }}
+      <script src="{{ .RelPermalink }}"></script>
+    {{- end }}
+  {{- else }}
+    {{- $opts := dict "minify" true }}
+    {{- with . | js.Build $opts | fingerprint }}
+      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- end }}
+  {{- end }}
 {{- end }}
 
+{{/* Include Bootstrap bundle with conditional processing based on Hugo environment */}}
 {{- with resources.Get "vendors/bootstrap.bundle.js" }}
-{{- if eq hugo.Environment "development" }}
-{{- with . | js.Build }}
-<script src="{{ .RelPermalink }}"></script>
+  {{- if eq hugo.Environment "development" }}
+    {{- with . | js.Build }}
+      <script src="{{ .RelPermalink }}"></script>
+    {{- end }}
+  {{- else }}
+    {{- $opts := dict "minify" true }}
+    {{- with . | js.Build $opts | fingerprint }}
+      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- end }}
+  {{- end }}
 {{- end }}
-{{- else }}
-{{- $opts := dict "minify" true }}
-{{- with . | js.Build $opts | fingerprint }}
-<script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
-{{- end }}
-{{- end }}
-{{- end }}
+
+{{/* Include custom.js if defined in site parameters with conditional processing based on Hugo environment */}}
+{{ if .Site.Params.Custom.Js }}
+  {{- with resources.Get "js/custom.js" }}
+    {{- if eq hugo.Environment "development" }}
+      {{- with . | js.Build }}
+        <script src="{{ .RelPermalink }}"></script>
+      {{- end }}
+    {{- else }}
+      {{- $opts := dict "minify" true }}
+      {{- with . | js.Build $opts | fingerprint }}
+        <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{ end }}
