@@ -3,12 +3,22 @@
   "version": "1.0.0",
   "description": "Custom Hugo theme with Summery Panel, Admin Panel, and Light/Dark theme support.",
   "scripts": {
+    "npm-check": "npm-check -u",
+    "fullinstall": "npm run preinstall && npm install && npm run postinstall",
+    "preinstall": "rimraf assets/vendor",
+    "postinstall": "vendor-copy",
     "dev": "hugo server --buildDrafts --buildFuture --buildExpired --gc --ignoreCache --noBuildLock --logLevel info ",
     "prod": "hugo server --buildDrafts --buildFuture --buildExpired --gc --ignoreCache --noBuildLock --logLevel info -e production",
     "build": "hugo --gc --verbose --cleanDestinationDir --minify"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  },
+  "devDependencies": {
+    "npm-check": "^6.0.1",
+    "rimraf": "^5.0.5",
+    "vendor-copy": "^3.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Armoghans-Organization/Sleek-Stream-Theme.git"
@@ -32,5 +42,12 @@
   "bugs": {
     "url": "https://github.com/Armoghans-Organization/Sleek-Stream-Theme/issues"
   },
-  "homepage": "https://github.com/Armoghans-Organization/Sleek-Stream-Theme#readme"
+  "homepage": "https://github.com/Armoghans-Organization/Sleek-Stream-Theme#readme",
+  "vendorCopy": [],
+  "devVendorCopy": [
+    {
+      "from": "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+      "to": "assets/vendors/bootstrap.bundle.js"
+    }
+  ]
 }
