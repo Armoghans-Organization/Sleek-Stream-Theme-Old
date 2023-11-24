@@ -1,0 +1,36 @@
+{
+  "name": "sleek-stream",
+  "version": "1.0.0",
+  "description": "Custom Hugo theme with Summery Panel, Admin Panel, and Light/Dark theme support.",
+  "scripts": {
+    "dev": "hugo server --buildDrafts --buildFuture --buildExpired --gc --ignoreCache --noBuildLock --logLevel info ",
+    "prod": "hugo server --buildDrafts --buildFuture --buildExpired --gc --ignoreCache --noBuildLock --logLevel info -e production",
+    "build": "hugo --gc --verbose --cleanDestinationDir --minify"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Armoghans-Organization/Sleek-Stream-Theme.git"
+  },
+  "keywords": [
+    "Hugo",
+    "Custom Theme",
+    "Custom",
+    "Theme",
+    "Light Mode",
+    "Dark Mode",
+    "Light/Dark Mode",
+    "Admin Panel",
+    "Summery Panel",
+    "Responsive",
+    "Customizeable",
+    "Template"
+  ],
+  "author": "Armoghan-ul-Mohmin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Armoghans-Organization/Sleek-Stream-Theme/issues"
+  },
+  "homepage": "https://github.com/Armoghans-Organization/Sleek-Stream-Theme#readme"
+}
