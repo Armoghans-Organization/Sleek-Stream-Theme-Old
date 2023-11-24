@@ -1,4 +1,4 @@
-# Theme Name
+# Sleek Stream
 
 ## Features
 
