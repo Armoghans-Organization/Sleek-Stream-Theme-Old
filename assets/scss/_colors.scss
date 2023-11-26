@@ -1,0 +1,40 @@
+// Color system
+
+// Theme Colors
+$primary: #d84646;
+$secondary: #0a78e6;
+$background: #ffe5e5;
+$text: #000000;
+
+// Dark Mode Colors
+$dark-primary: #b92727;
+$dark-secondary: #1987f5;
+$dark-background: #1a0000;
+$dark-text: #ffffff;
+
+// Theme Colors Map
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "background": $background,
+    "text": $text,
+    "dark-primary": $dark-primary,
+    "dark-secondary": $dark-secondary,
+    "dark-background": $dark-background,
+    "dark-text": $dark-text
+) !default;
+
+// Bootstrap Variables
+$body-bg: $background;
+$text-color: $text; // Adjust text color for light mode
+// Add more variables as needed
+
+// Dark Mode Styles
+$theme-colors: map-merge(
+    $theme-colors,
+    (
+        "dark-primary": $dark-primary,
+        "dark-secondary": $dark-secondary,
+        "dark-background": $dark-background
+    )
+) !default;
