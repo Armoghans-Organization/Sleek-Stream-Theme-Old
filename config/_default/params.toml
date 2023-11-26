@@ -1,3 +1,8 @@
+[Header]
+Title = 'Sleek Stream' # Title for the header
+Logo = false # Whether to display a logo ( false means no logo)
+Url = '' # URL for the header Logo (empty for no URL)
+
 [Custom]
 # Configuration for JavaScript (assets/js/custom.js)
 Js = false # Set to true to enable JavaScript functionality
