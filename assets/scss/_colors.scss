@@ -1,47 +1,32 @@
-// Color system
-// scss-docs-start color-variables
-$blue: #0d6efd !default;
-$indigo: #6610f2 !default;
-$purple: #6f42c1 !default;
-$pink: #d63384 !default;
-$red: #dc3545 !default;
-$orange: #fd7e14 !default;
-$yellow: #ffc107 !default;
-$green: #198754 !default;
-$teal: #20c997 !default;
-$cyan: #0dcaf0 !default;
-// scss-docs-end color-variables
+// Bootstrap Colors with Modifications and Comments
 
-// scss-docs-start colors-map
-$colors: (
-    "blue": $blue,
-    "indigo": $indigo,
-    "purple": $purple,
-    "pink": $pink,
-    "red": $red,
-    "orange": $orange,
-    "yellow": $yellow,
-    "green": $green,
-    "teal": $teal,
-    "cyan": $cyan
-) !default;
-// scss-docs-end colors-map
+// Bootstrap Colors
+$blue: #0d6efd !default; // Original Bootstrap blue
+$indigo: #6610f2 !default; // Original Bootstrap indigo
+$purple: #6f42c1 !default; // Original Bootstrap purple
+$pink: #d63384 !default; // Original Bootstrap pink
+$red: #dc3545 !default; // Original Bootstrap red
+$orange: #fd7e14 !default; // Original Bootstrap orange
+$yellow: #ffc107 !default; // Original Bootstrap yellow
+$green: #198754 !default; // Original Bootstrap green
+$teal: #20c997 !default; // Original Bootstrap teal
+$cyan: #0dcaf0 !default; // Original Bootstrap cyan
 
-// Theme Colors
-$primary: #d84646;
-$secondary: #0a78e6;
-$background: #ffe5e5;
-$text: #000000;
-$success: $green !default;
-$info: $cyan !default;
-$warning: $yellow !default;
-$danger: $red !default;
+// Custom Theme Colors
+$primary: #d84646; // Custom primary color
+$secondary: #0a78e6; // Custom secondary color
+$background: #ffe5e5; // Custom background color
+$text: #000000; // Custom text color
+$success: $teal !default; // Custom success color
+$info: $cyan !default; // Custom info color
+$warning: $yellow !default; // Custom warning color
+$danger: $red !default; // Custom danger color
 
 // Dark Mode Colors
-$dark-primary: #b92727;
-$dark-secondary: #1987f5;
-$dark-background: #1a0000;
-$dark-text: #ffffff;
+$dark-primary: #b92727; // Custom dark mode primary color
+$dark-secondary: #1987f5; // Custom dark mode secondary color
+$dark-background: #1a0000; // Custom dark mode background color
+$dark-text: #ffffff; // Custom dark mode text color
 
 // Theme Colors Map
 $theme-colors: (
