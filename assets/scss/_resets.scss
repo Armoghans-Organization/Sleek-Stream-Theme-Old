@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:700|Oldenburg:400");
+@import "bootstrap/fonts";
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $paragraph-font-family;
+}
+
+::selection {
+    background: $dark-primary;
+    color: $dark-text;
+}
+
+/* Define scrollbar width and track color */
+::-webkit-scrollbar {
+    width: 12px; /* Set the width of the scrollbar */
+}
+
+/* Define the color of the scrollbar track */
+::-webkit-scrollbar-track {
+    background-color: $background; /* Change this to your desired track color */
+}
+
+/* Define the color and style of the scrollbar thumb (the draggable handle) */
+::-webkit-scrollbar-thumb {
+    background-color: $primary; /* Change this to your desired thumb color */
+    border-radius: 6px; /* Add rounded corners to the thumb */
+    border: 3px solid #fff; /* Add a border around the thumb */
+}
+
+/* Define the color of the scrollbar corner (where horizontal and vertical scrollbars meet) */
+::-webkit-scrollbar-corner {
+    background-color: #f1f1f1; /* Change this to your desired corner color */
+}
